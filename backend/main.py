@@ -16,6 +16,7 @@ from utils.config_utils import get_settings
 from session.session_layer import validate_session
 from contextlib import asynccontextmanager
 from database import create_db_and_tables
+from db.utils.dev_utils import clear_local_database
 
 # Import routes
 from routes import email_routes, auth_routes, file_routes, users_routes, start_date_routes, stats_routes
@@ -23,6 +24,8 @@ from routes import email_routes, auth_routes, file_routes, users_routes, start_d
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
+    # Clear database in local development
+    clear_local_database()
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -45,8 +48,7 @@ app.state.limiter = limiter  # Ensure limiter is assigned
 # Configure CORS
 if settings.is_publicly_deployed:
     # Production CORS settings
-    origins = ["https://www.jobba.help", "https://www.staging.jobba.help", 
-    "https://www.app.justajobapp.com", "https://www.api.justajobapp.com"]
+    origins = ["https://www.justajobapp.com", "https://www.api.justajobapp.com"]
 else:
     # Development CORS settings
     origins = [

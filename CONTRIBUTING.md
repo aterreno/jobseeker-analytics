@@ -298,80 +298,80 @@ git checkout -b new_branch_name  # Create a new branch for your next feature
 ```
 This ensures you're always working on the latest version of the codebase.
 
+### Pull Request Methodology
 
+#### 1. The "One Diff, One Thesis" Principle
 
-   #### 1. The "One Diff, One Thesis" Principle
-   
-       - Each code change should focus on a single purpose or goal.
-   
-      **What This Means:**
-      - Make each pull request about one specific improvement
-      - Address one feature, bug fix, or enhancement at a time
-      - Keep your changes focused and related to one objective
-      
-      **Why It Matters:**
-      When your changes have a single purpose, they're easier to review, understand, and test. If something goes wrong, it's also easier to identify and fix the problem.
-      
-      **Example:**
-      If you're working on a user profile page:
-      - ✅ GOOD PR: Add email validation to the registration form
-      - ❌ BAD PR: Add email validation, redesign the profile layout, and optimize database queries
-      
-      Think of each PR as a single chapter in a book, not the entire story.
-      
-      #### 2. Keep Pull Requests Under 250 Lines of Code
-      
-      Smaller code changes are easier to review and less likely to introduce bugs.
-      
-      **How to Stay Under the Limit:**
-      - Count only meaningful lines of code you've added or changed
-      - Break large features into a series of smaller, sequential changes
-      - Submit related changes in separate pull requests
-      
-      **Breaking Down Large Features:**
-      When implementing something complex, try this approach:
-      1. First PR: Set up the basic structure
-      2. Second PR: Implement core functionality
-      3. Third PR: Add refinements and advanced features
-      
-      **Example:**
-      Instead of one massive PR for a new search feature, create:
-      1. PR #1: Add search box to navigation
-      2. PR #2: Connect search box to backend
-      3. PR #3: Implement search results display
-      4. PR #4: Add filtering options
-      
-      #### 3. Make Your Code Testable
-      
-      Always include a way to verify your changes work correctly.
-      
-      **Verification Methods:**
-      - **Automated tests:** Write code that checks your changes automatically
-      - **Screenshots/Videos:** For visual changes, show before and after
-      - **Test instructions:** Provide clear steps for others to test your changes
-      
-      **What Good Testing Looks Like:**
-      - Tests cover both expected behavior and edge cases
-      - Instructions are specific enough that anyone could follow them
-      - Visual evidence clearly demonstrates the improvement
-      
-      **Example:**
-      For a login form improvement:
-      ```
-      Test Plan:
-      1. Try logging in with a correct username/password → Should succeed
-      2. Try logging in with an incorrect password → Should show error message
-      3. Try logging in with a blank password → Should prevent submission
-      
-      [Screenshots attached showing each scenario]
-      ```
-      
-      Remember: Good pull requests aren't just about the code you write—they're about making changes that others can understand, verify, and maintain.
-      
-      Lastly, do your best to follow the below coding style guides.
-      - Python: https://google.github.io/styleguide/pyguide.html
-      - TypeScript: https://google.github.io/styleguide/tsguide.html
-      - HTML/CSS: https://google.github.io/styleguide/htmlcssguide.html
+- Each code change should focus on a single purpose or goal.
+
+**What This Means:**
+- Make each pull request about one specific improvement
+- Address one feature, bug fix, or enhancement at a time
+- Keep your changes focused and related to one objective
+
+**Why It Matters:**
+When your changes have a single purpose, they're easier to review, understand, and test. If something goes wrong, it's also easier to identify and fix the problem.
+
+**Example:**
+If you're working on a user profile page:
+- ✅ GOOD PR: Add email validation to the registration form
+- ❌ BAD PR: Add email validation, redesign the profile layout, and optimize database queries
+
+Think of each PR as a single chapter in a book, not the entire story.
+
+#### 2. Keep Pull Requests Under 250 Lines of Code
+
+Smaller code changes are easier to review and less likely to introduce bugs.
+
+**How to Stay Under the Limit:**
+- Count only meaningful lines of code you've added or changed
+- Break large features into a series of smaller, sequential changes
+- Submit related changes in separate pull requests
+
+**Breaking Down Large Features:**
+When implementing something complex, try this approach:
+1. First PR: Set up the basic structure
+2. Second PR: Implement core functionality
+3. Third PR: Add refinements and advanced features
+
+**Example:**
+Instead of one massive PR for a new search feature, create:
+1. PR #1: Add search box to navigation
+2. PR #2: Connect search box to backend
+3. PR #3: Implement search results display
+4. PR #4: Add filtering options
+
+#### 3. Make Your Code Testable
+
+Always include a way to verify your changes work correctly.
+
+**Verification Methods:**
+- **Automated tests:** Write code that checks your changes automatically
+- **Screenshots/Videos:** For visual changes, show before and after
+- **Test instructions:** Provide clear steps for others to test your changes
+
+**What Good Testing Looks Like:**
+- Tests cover both expected behavior and edge cases
+- Instructions are specific enough that anyone could follow them
+- Visual evidence clearly demonstrates the improvement
+
+**Example:**
+For a login form improvement:
+```
+Test Plan:
+1. Try logging in with a correct username/password → Should succeed
+2. Try logging in with an incorrect password → Should show error message
+3. Try logging in with a blank password → Should prevent submission
+
+[Screenshots attached showing each scenario]
+```
+
+Remember: Good pull requests aren't just about the code you write—they're about making changes that others can understand, verify, and maintain.
+
+Lastly, do your best to follow the below coding style guides.
+- Python: https://google.github.io/styleguide/pyguide.html
+- TypeScript: https://google.github.io/styleguide/tsguide.html
+- HTML/CSS: https://google.github.io/styleguide/htmlcssguide.html
 
 ---
 
